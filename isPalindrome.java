@@ -7,6 +7,7 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+ //回文链表
 class Solution {
     public static ListNode reverseList(ListNode head){
         ListNode prev = null;
