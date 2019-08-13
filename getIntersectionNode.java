@@ -1,4 +1,5 @@
 # LinkedList
+//编写一个程序，找到两个单链表相交的起始节点。
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         //计算两个链表的长度，并求差值
         ListNode l1 = headA;
