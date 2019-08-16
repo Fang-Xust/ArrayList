@@ -33,4 +33,26 @@ public class LinkedList {
             return head;
         }
     }
+     //头删
+    private static ListNode popFront(ListNode head){
+        if(head == null){
+            System.err.println("链表为空，无法删除");
+            return null;
+        }
+        return head.next;
+    }
+    //尾删
+    private static ListNode popBack(ListNode head){
+        if(head == null){
+            System.err.println("链表为空，无法删除");
+            return null;
+        }else{
+            ListNode lastSecond = head;
+            while(lastSecond.next.next != null){
+                lastSecond = lastSecond.next;
+            }
+            lastSecond.next = null;
+            return head;
+        }
+    }
 }
