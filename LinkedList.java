@@ -55,4 +55,22 @@ public class LinkedList {
             return head;
         }
     }
+    //在指定结点后面插入结点
+    private static void pushAfter(ListNode pos, int val){
+        ListNode node = new ListNode(val);
+        node.next = pos.next;
+        pos.next = node;
+    }
+    //删除指定结点后面的结点
+    private static void popAfter(ListNode pos){
+        pos.next = pos.next.next;
+    }
+
+    private static void printLinkedList(ListNode head){
+        System.out.println("打印链表：");
+        for (ListNode cur = head; cur != null; cur = cur.next) {
+            System.out.print(cur + "-->");
+        }
+        System.out.println("null");
+    }
 }
