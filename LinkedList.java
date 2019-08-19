@@ -95,4 +95,30 @@ public class LinkedList {
         }
         return head;
     }
+    //反转链表
+    public static ListNode reverseList(ListNode head){
+        ListNode prev = null;
+        ListNode next = null;
+        ListNode cur = head;
+        while(cur != null){
+            next = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = next;
+        }
+        return prev;
+    }
+    //找出链表的中间结点
+    public static ListNode middleNode(ListNode head){
+        ListNode node = head;
+        int len = 0;
+        for(;head != null;head = head.next){
+            len++;
+        }
+        int mid = len / 2;
+        for(int i = 0;i < mid;i++){
+            node = node.next;
+        }
+        return node;
+    }
 }
