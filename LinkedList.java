@@ -121,4 +121,20 @@ public class LinkedList {
         }
         return node;
     }
+    //找到链表倒数第k个结点
+    public static ListNode FindKthToTail(ListNode head,int k){
+        ListNode node = head;
+        int len = 0;
+        for (; head != null; head = head.next) {
+            len++;
+        }
+        int ret = len - k;
+        if(k > len){
+            return null;
+        }
+        for(int i = 0; i < ret; i++){
+            node = node.next;
+        }
+        return node;
+    }
 }
