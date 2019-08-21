@@ -159,4 +159,40 @@ public class LinkedList {
         //上面的if语句可以写成cur.next = l1 == null ? l2 : l1;
         return dummy.next;
     }
+    //链表分割：编写代码，以给定值x为基准将链表分割成两部分，所有小于x的结点排在大于或等于x的结点之前。
+    public static ListNode partition(ListNode head, int x){
+        ListNode small = null;
+        ListNode smallLast = null;
+        ListNode big = null;
+        ListNode bigLast = null;
+        ListNode cur = head;
+        while(cur != null){
+            if(cur.val < x){
+                if(small == null){
+                    small = cur;
+                }else{
+                    smallLast.next = cur;
+                }
+                //更新最后一个结点为cur
+                smallLast = cur;
+            }else{
+                if(big == null){
+                    big = cur;
+                }else{
+                    bigLast.next = cur;
+                }
+                bigLast = cur;
+            }
+            cur = cur.next;
+        }
+        if(small == null){
+            return big;
+        }else{
+            smallLast.next = big;
+            if(bigLast != null) {
+                bigLast.next = null;
+            }
+            return small;
+        }
+    }
 }
