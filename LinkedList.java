@@ -262,4 +262,21 @@ public class LinkedList {
         //返回此结点
         return longer;
     }
+    //环形链表
+    public static boolean hasCycle(ListNode head) {
+        //思路：快慢引用法
+        ListNode slow = head;
+        ListNode fast = head;
+        while(slow != null && fast != null){
+            if(fast.next == null){//判空,如果不加会报空指针异常
+                return false;
+            }
+            slow = slow.next;                //慢引用，一次走一步
+            fast = fast.next.next;           //快引用，一次走两步
+            if(slow == fast){                    //如果相遇，说明带坏
+                return true;
+            }
+        }
+        return false;
+    }
 }
