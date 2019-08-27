@@ -308,4 +308,27 @@ public class LinkedList {
         }
         return pHead;
     }
+    public static void main(String[] args) {
+        ListNode head = null;
+        head = pushFront(head,4);
+        head = pushFront(head,3);
+        head = pushFront(head,2);
+        head = pushFront(head,1);
+        head = pushFront(head,0);
+
+        printLinkedList(head);// 0 1 2 3 4
+
+        head = popFront(head);
+        head = popFront(head);
+
+        printLinkedList(head);// 2 3 4
+
+        head = pushBack(head,5);
+        head = pushBack(head,6);
+
+        printLinkedList(head);// 2 3 4 5 6
+
+        head = popBack(head);
+        head = popBack(head);
+    }
 }
