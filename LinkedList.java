@@ -330,5 +330,22 @@ public class LinkedList {
 
         head = popBack(head);
         head = popBack(head);
+        printLinkedList(head);// 2 3 4
+
+        pushAfter(head,100);
+        pushAfter(head,200);
+
+        //head = partition(head,90);//按90前后分割分割
+
+        printLinkedList(head);// 2 200 100 3 4
+
+        popAfter(head);
+        popAfter(head);
+
+        printLinkedList(head);// 2 3 4
+
+        removeElements(head,3);
+
+        printLinkedList(head);// 2 4
     }
 }
