@@ -347,5 +347,22 @@ public class LinkedList {
         removeElements(head,3);
 
         printLinkedList(head);// 2 4
+        pushAfter(head,3);
+        head = pushBack(head,5);
+        head = pushFront(head,1);
+
+        printLinkedList(head);// 1 2 3 4 5
+
+        head = reverseList(head);
+
+        printLinkedList(head);// 5 4 3 2 1
+
+        head = middleNode(head);
+
+        printLinkedList(head);// 3 2 1
+        head = pushFront(head,4);
+        head = pushFront(head,5);
+
+        printLinkedList(head);// 5 4 3 2 1
     }
 }
