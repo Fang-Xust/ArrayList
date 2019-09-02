@@ -364,5 +364,16 @@ public class LinkedList {
         head = pushFront(head,5);
 
         printLinkedList(head);// 5 4 3 2 1
+        head = middleNode(head);
+
+        printLinkedList(head);// 3 2 1
+        head = pushFront(head,4);
+        head = pushFront(head,5);
+
+        printLinkedList(head);// 5 4 3 2 1
+
+        head = FindKthToTail(head, 4);
+
+        printLinkedList(head);// 4 3 2 1
     }
 }
