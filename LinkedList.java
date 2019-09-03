@@ -375,5 +375,16 @@ public class LinkedList {
         head = FindKthToTail(head, 4);
 
         printLinkedList(head);// 4 3 2 1
+        
+        System.out.println(chkPalindrome(head));//返回false
+        printLinkedList(head);//判断完是否回文链表后继续打印原来链表结构 4 3 2 1
+
+        head = pushBack(head,2);
+        head = pushBack(head,3);
+        head = pushBack(head,4);
+        printLinkedList(head);// 4 3 2 1 2 3 4  当前链表是回文结构
+        System.out.println(chkPalindrome(head));//返回true
+        printLinkedList(head);//打印原来的结构 4 3 2 1 2 3 4
+        System.out.println(getLength(head));//求链表长度
     }
 }
